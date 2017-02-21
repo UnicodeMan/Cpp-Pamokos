@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_CTYPE,"");
+    int sl1, sl2, s1, s2, p1, p2, kaina, pp1, pp2, sl3, s3, p3;
+    cout << "Prieš pirkdamas prekę, kiek turėjai šilingų? ";
+    cin >> sl1;
+    cout << "Kiek svarų? ";
+    cin >> s1;
+    cout << "Kiek pencų? ";
+    cin >> p1;
+    cout << "Kiek dabar turi šilingų? ";
+    cin >> sl2;
+    cout << "Kiek dabar turi svarų? ";
+    cin >> s2;
+    cout << "Kiek dabar turi pencų? ";
+    cin >> p2;
+
+    // smulkinimas į pencus
+
+    pp1 = sl1 * 12 * 20 + s1 * 20 + p1;
+    pp2 = sl2 * 12 * 20 + s2 * 20 + p2;
+
+    // atimtis
+
+    kaina = pp1 - pp2;
+
+    // grąžos stambinimas
+
+    sl3 = kaina / (20 * 12);
+    s3  = (kaina - sl3 * 12 * 20) / 20;
+    p3  = kaina - (sl3 * 20 * 12 + s3 * 20);
+
+    // Atsakymas
+
+    cout << "Prekė kainavo " << sl3 << " šilingus, " << s3 << " svarus, " << p3 << " pencus." <<endl;
+    return 0;
+}
